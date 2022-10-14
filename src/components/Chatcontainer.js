@@ -1,4 +1,5 @@
 import React , {useState , useEffect, useRef } from 'react'
+import { IoSendSharp } from "react-icons/io5";
 import './Chatcontainer.css'
 import Chatmessage from './Chatmessage'
 import EmojiPicker from 'emoji-picker-react';
@@ -10,7 +11,7 @@ import firebase from 'firebase';
 function Chatcontainer(props) {
 
     const [chatUser, setChatUser] = useState([]);
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState("");
     const [chatMessages, setChatMessages] = useState([]);
     const {emailId} = useParams();
     const chatBox  = useRef(null);
@@ -49,7 +50,7 @@ function Chatcontainer(props) {
 
     const send = (e)=>{
         e.preventDefault();
-        if(emailId){
+        if(emailId && message !== ""){
             let payload = {
                 text: message,
                 senderEmail: props.currentUser.email,
@@ -123,7 +124,7 @@ function Chatcontainer(props) {
                     }}/>
                 </form>
                 <div className="send-btn" onClick={send}>
-                    <i className="bi bi-send-fill"></i>
+                  <IoSendSharp/>
                 </div>
             </div>
         </div>

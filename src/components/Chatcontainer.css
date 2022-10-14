@@ -104,7 +104,6 @@
 }
 
 .send-btn{
-    transform: rotate(45deg);
     margin-right: 15px;
     background-color: #128c7e;
     width: 35px;
@@ -116,6 +115,10 @@
     color: white;
     font-size: larger;
     cursor: pointer;
+}
+.send-btn svg{
+    margin-left: 8px;
+  
 }
 
 @media  (min-width: 1164px){

@@ -11,6 +11,7 @@
     padding: 6px;
     border-radius: 10px;
     align-self: flex-end;
+    word-break: break-all;
 }
 .chat-message-text{
     text-align: left;
@@ -30,11 +31,7 @@
 @media  (max-width: 800px){
     .chat-message{
         margin: 15px 10px 15px 10px;
+        max-width: 330px;
     }
-    .chat-message-text{
-        font-size: 11px;
-    }
-    .chat-message-date{
-        font-size: 9px;
-    }
+    
 }

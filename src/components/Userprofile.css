@@ -1,0 +1,29 @@
+.user-profile{
+    height: 53px;
+    display: flex;
+    padding: 5px 0 5px 10px;
+    align-items: center;
+    background: white;
+    margin-bottom: 4px;   
+    cursor: pointer;
+}
+.user-profile img{
+    height: 40px;
+    width: 40px;
+}
+.profile-name{
+    height: 42px;
+    width: 194px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.profile-name span{
+    font-size: 15px;
+}
+.user-last-message{
+    font-size: 13px;
+    color: grey;
+    margin-bottom: 0;
+    overflow: hidden;
+}

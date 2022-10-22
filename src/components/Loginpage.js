@@ -3,7 +3,7 @@ import { Navigate } from 'react-router';
 import db,{ auth, googleProvider } from '../firebase';
 import './Loginpage.css'
 
-function Loginpage({setUser}) {
+function Loginpage(props) {
     const signInWithGoogle = ()=>{
         auth.signInWithPopup(googleProvider)
         .then((result)=>{
@@ -13,7 +13,7 @@ function Loginpage({setUser}) {
                 photoURL: result.user.photoURL
             };
             <Navigate to="/"/>
-            setUser(newUser);
+            props.setUser(newUser);
             localStorage.setItem('user' , JSON.stringify(newUser));
             db.collection('users').doc(result.user.email).set(newUser);
         })

@@ -1,7 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 import Home from './components/Home';
-import Navbar from './components/Navbar';
 import Chatpage from './components/Chatpage';
 import About from './components/About';
 import {
@@ -26,14 +25,23 @@ function App() {
 
   const newUser =  JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState(newUser); 
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = ()=>{
+    if(mode==="light"){
+      setMode("dark");
+    }
+    else{
+      setMode("light");
+    }
+  }
   return (
     <>{
       user ? (
       <Router>
-          <Navbar signOut={signOut}/>
             <Routes>
-              <Route exact path="/" element={<Home currentUser={user} />}/>
-              <Route exact path="/:emailId" element={<Chatpage currentUser={user}/>} />
+              <Route exact path="/" element={<Home currentUser={user} mode={mode} signOut={signOut}/>}/>
+              <Route exact path="/:emailId" element={<Chatpage currentUser={user} mode={mode}/>} />
               <Route exact path="/about" element={<About/>} />
             </Routes>
       </Router>

@@ -27,6 +27,9 @@
 .chat-message p{
     margin-bottom: 0;
 }
+.emoji{
+    display: contents;
+}
 
 @media  (max-width: 800px){
     .chat-message{

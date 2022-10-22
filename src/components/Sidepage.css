@@ -28,7 +28,7 @@
     background-color: #dddddd;
 }
 .side-page-profile {
-    margin: 0 18px 0px 10px;
+    margin: 0 7px 0px 10px;
     padding: 3px;  
     cursor: pointer;
 }
@@ -82,6 +82,25 @@
 .side-page::-webkit-scrollbar{
     display: none;
     width: 4px;
+}
+.moreIcon{
+    padding: 0 9px;
+    cursor: pointer;
+}
+.more-menu{
+    height: 142px;
+    width: 151px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 48%;
+    background-color: white;
+    box-shadow: 0px 6px 29px #888888;
+}
+.more-menu span{
+    padding: 5px 11px;
+    cursor: pointer;
 }
 @media  (max-width: 690px){
   .side-page{

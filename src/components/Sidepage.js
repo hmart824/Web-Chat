@@ -1,6 +1,7 @@
-import React ,{useState , useEffect} from 'react';
+import React ,{useState , useEffect } from 'react';
 import './Sidepage.css';
 import Userprofile from './Userprofile';
+import { CgMoreVertical } from "react-icons/cg";
 import db from '../firebase'
 
 
@@ -25,7 +26,7 @@ function Sidepage(props) {
             })
         }
         getAllFriends();
-    },[])
+    },[props.currentUser.email])
     const searchedUser = allUser.filter((user) =>{
         if(searchInput){
             if(user.data().fullname.toLowerCase().includes(searchInput.toLocaleLowerCase()))
@@ -34,7 +35,13 @@ function Sidepage(props) {
 
             }  
         }
+
     }) ;
+    const [openMoreMenu, setopenMoreMenu] = useState(false);
+    
+    const openMore = ()=>{
+        setopenMoreMenu(!openMoreMenu)
+    }
 
     const searchItem = searchedUser.map((user) =>{
         return (
@@ -50,10 +57,13 @@ function Sidepage(props) {
     <>
         <div className="side-page ">
             <div className="side-page-header">
-                <div className="side-page-profile" onClick={props.signOut}>
+                <div className="side-page-profile">
                     <img src={props.currentUser.photoURL} alt="" />   
                 </div>
                 <p>{props.currentUser.fullname}</p>
+                    <div className="moreIcon" onClick={openMore} >
+                        <CgMoreVertical/>
+                    </div>
             </div>
             <div className="search">            
                 <div className="search-box">
@@ -79,9 +89,15 @@ function Sidepage(props) {
                              
                            
             </div>
+           { openMoreMenu && <div className="more-menu" >
+                <span>New Group</span>
+                <span>Starred messages</span>
+                <span>Settings</span>
+                <span onClick={props.signOut}>Logout</span>
+            </div>}
         </div>
     </>
   )
 }
 
-export default Sidepage
+export default Sidepage;

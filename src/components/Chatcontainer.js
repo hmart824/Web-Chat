@@ -115,7 +115,9 @@ function Chatcontainer(props) {
                     setMessage(message + emojiData.emoji)
                 }}/>}
                 <div className="chat-input-btn">
-                    <i className="bi bi-emoji-smile" onClick={emojiBox}></i>
+                    <div className="emoji" onClick={emojiBox}>
+                        {openEmojiBox ? <i class="bi bi-x-circle"></i> : <i className="bi bi-emoji-smile"></i>}
+                    </div>
                     <i className="bi bi-paperclip"></i>
                 </div>
                 <form onSubmit={send}>

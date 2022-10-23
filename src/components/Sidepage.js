@@ -38,10 +38,9 @@ function Sidepage(props) {
 
     }) ;
     const [openMoreMenu, setopenMoreMenu] = useState(false);
-    
     const openMore = ()=>{
         setopenMoreMenu(!openMoreMenu)
-    }
+    };
 
     const searchItem = searchedUser.map((user) =>{
         return (
@@ -58,10 +57,11 @@ function Sidepage(props) {
         <div className="side-page ">
             <div className="side-page-header">
                 <div className="side-page-profile">
-                    <img src={props.currentUser.photoURL} alt="" />   
+                    <img src={props.currentUser.photoURL} alt="" /> 
+                    <p>{props.currentUser.fullname}</p>  
                 </div>
-                <p>{props.currentUser.fullname}</p>
-                    <div className="moreIcon" onClick={openMore} >
+                
+                    <div className="moreIcon" onClick={openMore}>
                         <CgMoreVertical/>
                     </div>
             </div>

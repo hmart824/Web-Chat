@@ -38,6 +38,15 @@
 .home-logo > img{
     width: 150px;
 }
+.imgContainer{
+    height: 200px;
+    width: 200px;
+    border: 2px solid red;
+    position: absolute;
+}
+.imgContainer img{
+    width: 100%;
+}
 
 @media  (min-width: 1164px){
     .home-container{

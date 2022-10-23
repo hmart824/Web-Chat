@@ -13,6 +13,10 @@ function Home(props) {
             <img src="logo.png" alt="" />
           </div>
         </div>
+        {/* <div className="imgContainer">
+          <img src="https://lh3.googleusercontent.com/a/ALm5wu1zRepXhqecsXInnBiUqGoV8yCPKqgiPrPxCzTKUg=s96-c" alt="" />
+        </div> */}
+        
       </div>
     </>
   )

@@ -12,11 +12,11 @@ function Userprofile(props) {
   }
   return (
     <>
-         <div className="user-profile" onClick={()=> goToUser(props.email)}>
+         <div className="user-profile">
                 <div className="side-page-profile">
                     <img src={props.photoURL} alt="" />
                 </div>
-                <div className="profile-name">
+                <div className="profile-name" onClick={()=> goToUser(props.email)}>
                   <span>{props.name}</span>
                   {props.lastMessage && (<p className='user-last-message'>{props.lastMessage}</p>)}
                 </div>
